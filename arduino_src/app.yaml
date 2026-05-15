@@ -1,0 +1,7 @@
+name: UNO Q Cloud Dashboard
+description: |
+  IoT dashboard for the Arduino UNO Q. Displays scrolling text and a custom logo on the onboard 8x13 monochrome LED matrix, controls RGB LEDs, and synchronises with Arduino Cloud for remote monitoring.
+ports: []
+bricks:
+  - arduino:arduino_cloud: {}
+icon: ☁️

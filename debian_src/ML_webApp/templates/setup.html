@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caregiver Setup</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 520px;
+            background: white;
+            border-radius: 18px;
+            padding: 32px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: #2563eb;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            margin-top: 8px;
+            margin-bottom: 28px;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px 14px;
+            margin-bottom: 20px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .note {
+            margin-top: 18px;
+            font-size: 13px;
+            color: #6b7280;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="card">
+            <div class="logo">🛁</div>
+
+            <h1>Initial setup</h1>
+
+            <p class="subtitle">
+                Enter the initial habits of the monitored person.
+                The system will use this information to build an initial baseline.
+            </p>
+
+            <form method="post" action="/setup">
+                <label for="person_name">Name of the monitored person</label>
+                <input
+                    type="text"
+                    id="person_name"
+                    name="person_name"
+                    placeholder="e.g. Mario"
+                    required
+                >
+
+                <label for="typical_daily_visits">Typical number of bathroom visits per day</label>
+                <input
+                    type="number"
+                    id="typical_daily_visits"
+                    name="typical_daily_visits"
+                    value="4"
+                    min="1"
+                    required
+                >
+
+                <label for="typical_duration_minutes">Typical visit duration, in minutes</label>
+                <input
+                    type="number"
+                    id="typical_duration_minutes"
+                    name="typical_duration_minutes"
+                    value="10"
+                    min="1"
+                    required
+                >
+
+                <label for="typical_shower_every_days">Typical shower frequency, in days</label>
+                <input
+                    type="number"
+                    id="typical_shower_every_days"
+                    name="typical_shower_every_days"
+                    value="2"
+                    min="1"
+                    required
+                >
+
+                <button type="submit">Save and open dashboard</button>
+            </form>
+
+            <p class="note">
+                After setup, the caregiver will be able to monitor bathroom sessions,
+                anomalies, and model status directly from the dashboard.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

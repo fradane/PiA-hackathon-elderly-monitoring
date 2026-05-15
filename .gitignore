@@ -1,0 +1,4 @@
+# ignore app cache folder
+.cache/
+
+./debian_src/ML_webApp/venv
